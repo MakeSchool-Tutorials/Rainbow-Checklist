@@ -67,7 +67,7 @@ You should be able to verify that a new empty file was created named checklist.p
 
 There are many to choose from and each has their following. Popular choices include Atom, Sublime Text, Visual Studio Code, and for the more adventurous souls VIM. This tutorial will remain editor agnostic so choose the one that is the most comfortable for you.
 
-Open checklist.py in your chosen text editor and write the following line of code.
+Open `checklist.py` in your chosen text editor and write the following line of code.
 
 ```python
 print("Hello World")

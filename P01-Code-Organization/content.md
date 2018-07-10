@@ -19,41 +19,30 @@ When you construct a building, you don't start by digging a hole in the ground, 
 How a person or an organization decides to develop a piece of software will vary wildly on who's in charge. **Agile development** is a common methodology that allows for a project to rapidly improve by constant iteration instead of the alternative **waterfall** approach that would have an entire project built to perfection before being released. Agile development is a whole topic by itself but a useful tool we can take from it is the concept of **user stories**. 
 
 ## User Stories
-By focusing on our desired results, we are more likely to stay on track with the features that we need instead of creating features for the sake of having features. Lets try some user stories here to get a hang of it.
+By focusing on our desired results, we're more likely to stay on track with the features that we need instead of creating features for the sake of having features. Lets try some user stories here to get a hang of how they work.
 
-An easy way to start using stories is to frame it in a template. You have a user that desires a feature so that they can do something.
+An easy way to write user stories is to frame them in a loose template. You have a user that desires a feature so that they can do something.
 
-An easy template is shown here.
+**As [a type of user], I want [some feature] so that I can [do something].**
 
-As **[a user]**, I want **[some feature]** so that I can **[do something]**.
+With user stories you want to approach a problem from the perspective of the user. Different types of users will have different experiences with the application. Here we only have one type of user in mind so we won't have to worry about what different types of users will or won't be able to see.
 
-In our case our user stories will look like this:
+In our case our user stories will look something like this:
 
-As **Captain Rainbow** I want to **be able to access a checklist from the terminal** so that I can **easily run it anywhere that has bash**.
+* As a user, I want to be able to create, read, update, and destroy items in a checklist.
 
-As **Captain Rainbow**, I want to **be able to add to a list all the colors I need to wear in a day** so I can **remember which colors I need to wear**.
+* As a user, I want to be able to mark off colors so I can know that it's already represented.
 
-As **Captain Rainbow**, I want to **be able to mark off colors that I have already chosen for the day** so I can **know that it's already represented**.
+* As a user, I want to be able to see everything in my list at once so I know what is in my list.
 
-As **Captain Rainbow**, I want to **be able to remove items from the list** so I can **remove duplicates**.
-
-As **Captain Rainbow**, I want to **be able to update items in the list** so I can **fix any errors**.
-
-As **Captain Rainbow**, I want to **be able to see everything in my list at once** so I can **know what is in it**.
-
-## Creating a Plan
 So from our user stories we can generate a list of important features and functionalities that our users will expect from our application.
 
-This list of features tells me that Captain Rainbow needs to be able to create, read, update, and destroy items in a list.
-We will additionally need to be able to see every item in the list, and mark off items he's already wearing.
+## CRUD
+Our first user story relates to the four fundamental operations that are needed for even the simplest operability. These functions -- **create**, **read**, **update**, and **destroy** -- are generally necessary for any software to be considered complete.  
 
-To further simplify matters we can say each of these features can be written as a function that can be called whenever we want to do that specific action.
+These four functions are so fundamental that they're often referred to by the acronym **CRUD**. 
 
-Now we're starting to have a good picture of what we need.
-
-1. A list resource.
-2. CRUD functions for the list resource.
-3. Helper functions to view list and mark items as worn.
+By simply making sure that our list includes these four operations we can be sure that at the very least our most basic operations can be met. Though we will need some more tools in additions to these four here.
 
 ## PEP8 Style Guide
 ```

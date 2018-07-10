@@ -110,6 +110,9 @@ while running:
     running = user_selection(selection)
 ```
 
+At this point you should have a simple working that looks like this
+![]()
+
 ## One last thing
 You'll notice that if you run the R option an error shows up. This is similar to one of the other errors we've seen in this tutorial. See if you can fix the error in question.
 
