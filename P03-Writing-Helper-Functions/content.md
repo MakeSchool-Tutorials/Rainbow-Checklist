@@ -126,9 +126,14 @@ Fortunately we have all the skills needed to write this function.
 
 ```python
 def mark_completed(index):
-    # Your Code here
+    # Add code here that marks an item as completed
 ```
-Complete the function above. *Hint*: Add text to the front of the text that already exists to mark item as completed.
+Complete the function above. *Hint*: Add a character to the front of the checklist item that denotes an item as completed.
+
+All we need to do is append some text to the item that we want to mark as checked. Let's use the character √ to indicate whether an item is marked as completed or not.
+
+>[info]
+>Look at how we implemented the update function to get an idea about how to interact with the item you want to work with. Use the `+` operator to append a checkmark to the front of the item in the checklist.
 
 ## Capturing User Input
 In order to interact with the list we'll need to be able to accept user input from the terminal.
