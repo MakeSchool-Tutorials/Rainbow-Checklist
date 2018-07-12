@@ -67,7 +67,7 @@ print(read(0))
 print(read(1))
 
 update(0, "purple socks")
-delete(1)
+destroy(1)
 
 print(read(0))
 
