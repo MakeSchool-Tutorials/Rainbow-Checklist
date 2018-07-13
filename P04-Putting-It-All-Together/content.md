@@ -3,7 +3,11 @@ title: Putting it all together
 slug: putting-it-together
 ---
 # The While Loop
-An type of loop that is available is the while loop. It will continue to loop while a condition remains true. The syntax is as follows.
+Running a chunk of code over and over again is so common that we're given many ways of accomplishing this one task. Many people have their own preferred looping strategy and there are many valid ways to approach a single problem. We've seen in our `list_all_items` helper function a way to loop over a specific number of values, but what if we don't know how many times we'll need to loop over a given piece of code?
+
+The `while` loop will help us out in this case as it will continue to loop over a section of code until a specified condition is met. Here our condition will be met when the user selects the Q option in the terminal.
+
+ The syntax for the while loop is as follows:
 
 ```python
 while condition:
@@ -11,7 +15,7 @@ while condition:
 ```
 
 We'll need a condition that starts off as true but can change to false during runtime. 
-Lets wrap our statements in the while loop like this
+Lets wrap our statements in the while loop like this:
 
 ```python
 running = True
@@ -20,7 +24,7 @@ while running:
     user_selection(selection)
 
 ```
-Here we have set a variable named running to ```True```. On every run the while loop will check the value of running and it will return back as True therby continuing the loop. This is called an infinite loop and it is where Apple decided to build their headquarters.
+Here we have set a variable named running to ```True```. On every run the while loop will check the value of `running` and it will return back as True therby continuing the loop. This is called an infinite loop and it is where Apple decided to build their headquarters.
 
 This code will never finish running so we need a way to set running to False somewhere.
 
@@ -97,12 +101,11 @@ def user_input(prompt):
 def user_selection(function_code):
     # User Selection Code here
 
+def test():
+    # Your testing code goes here
+
 # Run Tests
-# create_item("purple sox")
-# create_item("red cloak")
-# ...
-# ...
-# list_all_items()
+# test()
 
 running = True
 while running:

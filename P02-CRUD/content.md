@@ -223,9 +223,18 @@ def destroy(index):
 
 ```
 
-Testing code is so important that we won't cover it in this tutorial  much at all. However normally our testing code would reside in another file and be run with an automated testing tool like pytest. Using a tool like pytest allows you be consistent with the process of verifying that functions work as they should. Instead of using pytest to interpret the result we'll just use the terminal.
+Testing code is so important that we won't cover it in this tutorial in much depth at all. However normally our testing code would reside in another file and be run with an automated testing tool like pytest. Using a tool like pytest allows you be consistent with the process of verifying that functions work as they should. Instead of using pytest to interpret the result we'll just use our eyeballs and the terminal.
+
+Here though we will create a function that will house all of our testing code. That way we can toggle it on and off easily when needed.
+
+```python
+def test():
+    # Add your testing code here
+```
 
 Test the functions you made by calling them with different values and checking the result.
+
+Add these function calls to your new `test` function:
 ```
 create("purple sox")
 create("red cloak")
@@ -241,6 +250,31 @@ print(read(1))
 
 ```
 
+Call your new testing function by adding `test()` to the bottom of your file.
+
+Your program should be structured like this:
+
+```python
+checklist = list()
+
+def create(item):
+    # Create item code here
+
+def read(index):
+    # Read code here
+
+def update(index, item):
+    # Update code here
+
+def destroy(index):
+    # Destroy code here
+
+def test():
+    # Your testing code goes here
+
+test()
+```
+
 You should see the following output:
 ```
 purple sox
@@ -252,6 +286,6 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 We see an error because we tried to access the second item in a one item list. The last line of the error tells us this by saying the index was out of range.
-This may be something we'll have to think about if we were going to implement this in production. If this function were called with an invalid index value our program would crash and people would be sad. This is a topic for a stretch challenge or another tutorial however.
+This may be something we'll have to think about if we were going to implement this in production. If this function were called with an invalid index value our program would crash and people would be sad. As a stretch challenge you can update any applicable functions that we have made with the ability to verify that all index values are accurate.
 
 Remove the line that throws the error so we can move on.

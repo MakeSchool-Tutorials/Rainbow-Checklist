@@ -59,23 +59,36 @@ def update(index, item):
 def destroy(index):
     # Destroy code here
 
-# Run Tests
-create("purple sox")
-create("red cloak")
+def list_all_items():
+    # Code to list all items in list
 
-print(read(0))
-print(read(1))
+def test():
+    # Your tests here
 
-update(0, "purple socks")
-destroy(1)
-
-print(read(0))
+test()
 
 ```
 
-Call your new functions at the end of the file by adding:
+Call your new functions by adding this function call to your test function:
 ```python
 list_all_items()
+```
+
+Your testing function should look like this:
+
+```python
+def test():
+    create("purple sox")
+    create("red cloak")
+
+    print(read(0))
+    print(read(1))
+
+    update(0, "purple socks")
+    destroy(1)
+
+    print(read(0))
+    list_all_items()
 ```
 
 You'll see when you run this that the output has an error.
@@ -91,13 +104,16 @@ Traceback (most recent call last):
     print(index + list_item)
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```
-From the error it looks like the error is happening on line 21. The exciting thing about the + operator is that it does different things depending on the circumstance, but here we've confused it. When + sees two strings it will join them together so ```"a" + "b" ``` becomes ```"ab"```. But when + sees two integers or floats (Numbers without and with decimals respectively) it will add them mathematically so ```1 + 2 ``` becomes 3. 
+From the error it looks like the error is happening on line 21. Your error may exist on a different line than mine depending on where your `list_all_items` function exists. 
 
-On line 19 set ```index = 0 ```. 
-Because we left off the quotes, python will see this 0 as an integer and try to do math with it but it can't add a number to a word mathematically, so it complains. If we make index a string (a sequence of text characters) by using quotes, then it will no longer increment it in our loop correctly.
+The exciting thing about the `+` operator is that it does different things depending on the circumstance, but here we've confused it. When `+` sees two strings it will join them together so ```"a" + "b" ``` becomes ```"ab"```. But when `+` sees two integers or floats (Numbers without and with decimals respectively) it will add them mathematically so `1 + 2` becomes 3. 
 
-We must turn our mathematical number into the character representation of that number before we can use the + operator for string manipulation.
-Python provides built-in functions to allow for easy **type casting** -- which is converting from one type to another.
+Line 19 set `index = 0`. 
+
+Because we left the quotes off when setting index to 0 Python will interpret the value that index represents as a number - specifically a type of number called an **integer**. An integer is simply a number without a decimal whereas a **float** is a number with a decimal. We need our index to be an integer so can do math with this number. However when the `+` operator sees a number and some text it cannot tell which operation we intend to make. Should it do math, or string manipulation? In order to properly use the `+` operator we must convert our number to text. In computer science this text is called a **string** which is just a sequence of characters next to each other. If we make our index variable a string (a sequence of text characters) by using quotes, then it will no longer increment it in our loop correctly.
+
+We must temporarily convert our mathematical number into the character representation of that number before we can use the + operator for string manipulation.
+Fortunately Python provides built-in functions to allow for easy **type casting** -- which is converting from one type to another. In this case we want to cast an integer as a string.
 
 We can fix this function by adding a few things to our print statement.
 
@@ -119,9 +135,8 @@ purple socks
 
 Feel free to adjust the formatting to print a little nicer to the terminal.
 
-## More helper functions
-
-We'll need more helper functions to be sucessful here still. We need one that marks our items as completed. 
+## Mark Completed
+We need a helper function that marks our items as completed. 
 Fortunately we have all the skills needed to write this function.
 
 ```python
@@ -133,29 +148,15 @@ Complete the function above. *Hint*: Add a character to the front of the checkli
 All we need to do is append some text to the item that we want to mark as checked. Let's use the character √ to indicate whether an item is marked as completed or not.
 
 >[info]
->Look at how we implemented the update function to get an idea about how to interact with the item you want to work with. Use the `+` operator to append a checkmark to the front of the item in the checklist.
+>Look at how we implemented the update and read functions to get an idea about how to interact with the item you want to work with. Use the `+` operator to append a checkmark to the front of the item in the checklist.
 
-## Capturing User Input
-In order to interact with the list we'll need to be able to accept user input from the terminal.
-Use the input function to do this.
+## Feature Selection
+Let's also write a function that allows us to select which functions we want to run. We'll need to control the flow of our program by calling some functions sometimes and other functions at other times. We can put all this in it's own separate function to keep our program easier to follow.
 
-Lets create a function to prompt the user.
-
-```python
-def user_input(prompt):
-    user_input = input(prompt)
-    return user_input
-```
-
-Obviously we'll have to add additional options but for now we'll just leave it with these two options.
-
-Lets also write a function that does something with the user input that we get. We'll need to check what the user gave us which we can do with the if..elif..else block. 
-
-This where a good chunk of our actual code will reside. I'll start with a very simple decision tree that you will be able to flush out by yourself.
-
+The typical way to control which parts of your code are executed is with  `if..elif..else` statements. You'll be able to easily add additional `elif` blocks in order to add the functionality to complete this tutorial.
 
 ```python
-def user_selection(function_code):
+def select(function_code):
     # Create item
     if function_code == "C":
         input_item = user_input("Input item:")
@@ -166,7 +167,6 @@ def user_selection(function_code):
         item_index = user_input("Index Number?")
 
         # Remember that item_index must actually exist or our program will crash.
-        # This is a good place to verify user input.
         read(item_index)
 
     # Print all items
@@ -178,16 +178,31 @@ def user_selection(function_code):
         print("Unknown Option")
     
 ```
-Notice that comparisons are done using the == syntax whereas = is the assignment sytax. You can add as many elif statements as you want
+Notice that comparisons are done using the `==` syntax whereas `=` is the assignment syntax. You can add as many `elif` statements as you will need.
 
-Add this function and comment out the tests that you wrote earlier.
+Test this code by adding calls to this function inside your test function.
 
-The following lines should be added at the bottom to work with the function we just used.
+In order to fully test this function you'll want to be sure that your testing code will run each of your `elif` code blocks.
+
+## Capturing User Input
+In order to choose which function to run we'll need to be able to accept user input from the terminal.
+
+Use the built-in `input` function to do this.
+
+Let's create a function to prompt the user.
+
+```python
+def user_input(prompt):
+    user_input = input(prompt)
+    return user_input
+```
+
+Having user input exist in its own function allows us to know where to look if anything unexpected happens. User input is notoriously tricky and is typically sanitized in some way to prevent accidental and malicious input that may crash or exploit the system that you've spent so much time on. We will included a parameter that allows us to reuse this function with any message that needs to be delivered to our user.
+#####
 
 ```python
 selection = user_input("Press C to add to list, R to Read from list and P to display list")
 user_selection(selection)
-list_all_items()
 ```
 
 This will give us one run through, but we'll see that it's working.
@@ -219,19 +234,17 @@ def mark_completed(index):
 def user_input(prompt):
     # Get user input here
 
-def user_selection(function_code):
+def select(function_code):
     # User Selection Code here
 
+def test():
+    # Test your functions here
+
 # Run Tests
-# create("purple sox")
-# create("red cloak")
-# ...
-# ...
-# list_all_items()
+# test()
 
 selection = user_input("Press C to add to list, R to Read from list and P to display list")
 user_selection(selection)
-list_all_items()
 ```
 
 You should be able run the program once before it ends.
