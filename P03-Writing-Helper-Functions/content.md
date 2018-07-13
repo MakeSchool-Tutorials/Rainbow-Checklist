@@ -180,32 +180,51 @@ def select(function_code):
 ```
 Notice that comparisons are done using the `==` syntax whereas `=` is the assignment syntax. You can add as many `elif` statements as you will need.
 
-Test this code by adding calls to this function inside your test function.
+Test this code by adding calls to this function inside your test function like this.
+
+```python
+def test():
+    # Your testing code here
+    # ...
+    # Call your new function with the appropriate value
+    select("C")
+    # View the results
+    list_all_items()
+    # Call function with new value
+    select("R")
+    # View results
+    list_all_items()
+    # Continue until all code is run
+```
 
 In order to fully test this function you'll want to be sure that your testing code will run each of your `elif` code blocks.
 
-## Capturing User Input
-In order to choose which function to run we'll need to be able to accept user input from the terminal.
+Don't delete any of the tests that you've already written. All tests should be run to make sure that everything still works. Later we'll see how to automate this process in cases where our tests take awhile to complete.
 
-Use the built-in `input` function to do this.
+## Capturing User Input
+In order for our program to be useful we'll need to be able to accept user input from the terminal. We will use the built-in `input` function to do this.
 
 Let's create a function to prompt the user.
 
 ```python
 def user_input(prompt):
+    # the input function will display a message in the terminal 
+    # and wait for user input.
     user_input = input(prompt)
     return user_input
 ```
 
-Having user input exist in its own function allows us to know where to look if anything unexpected happens. User input is notoriously tricky and is typically sanitized in some way to prevent accidental and malicious input that may crash or exploit the system that you've spent so much time on. We will included a parameter that allows us to reuse this function with any message that needs to be delivered to our user.
-#####
+Checking for user input inside a dedicated function allows us to know where to look if anything unexpected happens. User input is notoriously tricky and is typically sanitized in some way to prevent accidental and malicious input that may crash or exploit your system. We will include a parameter that allows us to reuse this function with any message that needs to be delivered to our user.
+
+Call this function with your other tests this way:
 
 ```python
-selection = user_input("Press C to add to list, R to Read from list and P to display list")
-user_selection(selection)
+user_value = user_input("Please Enter a value:")
+print(user_value)
 ```
 
-This will give us one run through, but we'll see that it's working.
+## Overview
+So far we've created and tested every one of the functions that we'll need though we don't really have a working program yet. 
 
 Your checklist.py should look like this:
 ```python
@@ -231,28 +250,21 @@ def list_all_items():
 def mark_completed(index):
     # Your code here
 
-def user_input(prompt):
-    # Get user input here
-
 def select(function_code):
     # User Selection Code here
+
+def user_input(prompt):
+    # Get user input here
 
 def test():
     # Test your functions here
 
 # Run Tests
-# test()
-
-selection = user_input("Press C to add to list, R to Read from list and P to display list")
-user_selection(selection)
+ test()
 ```
-
-You should be able run the program once before it ends.
 
 We only need a couple more additions to get this working properly.
 
 When our program completes, everything we've done in memory is thrown out. We want to be able to keep the program open until we want to shut it down.
 
-This is where our second type of loop will come in handy. We really just want to loop those last 3 lines until we want to quit. A while loop will do nicely here.
-
-Congratulations - only one more section to go!
+This is where our second type of loop will come in handy. We really just want to loop a few lines of code until our user wants to quit. This brings us to our last section: The while loop.

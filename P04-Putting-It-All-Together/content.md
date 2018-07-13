@@ -55,7 +55,8 @@ def user_selection(function_code):
     elif function_code == "P":
         list_all_items()
     elif function_code == "Q":
-        # Return Other value here
+        # This is where we want to stop our loop
+        return False
     else:
         #Catch all
         print("Unknown Option")
