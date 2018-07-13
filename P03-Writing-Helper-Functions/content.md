@@ -280,4 +280,4 @@ We only need a couple more additions to get this working properly.
 
 When our program completes, everything we've done in memory is thrown out. We want to be able to keep the program open until we want to shut it down.
 
-This is where our second type of loop will come in handy. We really just want to loop a few lines of code until our user wants to quit. This brings us to our last section: The while loop.
+This is where our second type of loop will come in handy. We really just want to loop a few lines of code until our user wants to quit. This brings us to our last section -- the while loop.
