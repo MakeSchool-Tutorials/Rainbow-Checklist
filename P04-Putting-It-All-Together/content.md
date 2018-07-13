@@ -129,4 +129,4 @@ Here are some stretch challenges :
 ## Conclusion
 Here we've seen how to approach designing a simple application. We started by defining the features we needed with user stories. Then we took those stories and implemented the features we needed as functions that could be executed. All our functions were thoroughly tested so that we knew that all our code was in working order before shipping to the user. 
 
-We also saw that **objects** can contain both data and code that can be executed. Next we'll explore how to create our own objects and unlock the power of object oriented programming. In addition, we'll explore more testing tools that help us to write code with fewer bugs.
+We also saw that **objects** can contain both data and code that can be executed. Next we'll explore how to create our own objects to unlock the power of **object oriented programming**. In addition, we'll explore some testing tools that help us to write code with fewer bugs.
