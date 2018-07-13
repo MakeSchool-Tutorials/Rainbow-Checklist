@@ -7,9 +7,10 @@ You may see a need for a few more functions to help us out with our checklist.
 
 Right now we can see a single item if we know its index, but we should be able to see the entire list.
 
-In order to get the entire list we'll need to get every individual item in the list. This sort of operation is done so frequently that we're given many different tools to do it. This tutorial will make use of two different types of loops: for and while.
+## list_all_items function
+In order to view the entire list at once we'll need to get every individual item in the list. We'll need to run a bit of code over and over again in order for this to work. We do this so frequently that we're given many different tools to work with. We will make use of two different types of loops in this tutorial-- the **for** loop and **while** loop.
 
-The for loop in python is simple and powerful at the same time. Python takes care of a number of things for us that other languages do not. The syntax that we'll use is as follows:
+The **for** loop in python is simple and powerful at the same time. Python takes care of a number of things for us that other languages do not. The syntax that we'll use is as follows:
 
 ```python
 for list_item in checklist:
@@ -37,7 +38,7 @@ def list_all_items():
         index += 1
 ```
 
-Incrementing by an amount is done so often there is a shortcut for it. The += syntax takes the current value and adds to it. Play around with it in interactive mode to see how it works with integers, decimals, and strings.
+Incrementing by an amount is also done so often that there is a shortcut for it. The += syntax takes the current value and adds some value to it. Play around with it in interactive mode to see how it works with integers, decimals, and strings.
 
 At this point your python script should look like this:
 
@@ -135,7 +136,7 @@ purple socks
 
 Feel free to adjust the formatting to print a little nicer to the terminal.
 
-## Mark Completed
+## mark_completed function
 We need a helper function that marks our items as completed. 
 Fortunately we have all the skills needed to write this function.
 
@@ -147,10 +148,22 @@ Complete the function above. *Hint*: Add a character to the front of the checkli
 
 All we need to do is append some text to the item that we want to mark as checked. Let's use the character √ to indicate whether an item is marked as completed or not.
 
+So if Captain Rainbow needs to wear 
+
+```Yellow Shoes```
+
+After he marks his shoes off the list he should see
+
+```√Yellow Shoes```
+
+You can type the character by pressing option-v together.
+
 >[info]
 >Look at how we implemented the update and read functions to get an idea about how to interact with the item you want to work with. Use the `+` operator to append a checkmark to the front of the item in the checklist.
 
-## Feature Selection
+
+
+## select function
 Let's also write a function that allows us to select which functions we want to run. We'll need to control the flow of our program by calling some functions sometimes and other functions at other times. We can put all this in it's own separate function to keep our program easier to follow.
 
 The typical way to control which parts of your code are executed is with  `if..elif..else` statements. You'll be able to easily add additional `elif` blocks in order to add the functionality to complete this tutorial.
@@ -199,9 +212,9 @@ def test():
 
 In order to fully test this function you'll want to be sure that your testing code will run each of your `elif` code blocks.
 
-Don't delete any of the tests that you've already written. All tests should be run to make sure that everything still works. Later we'll see how to automate this process in cases where our tests take awhile to complete.
+Don't delete any of the tests that you've already written. All tests should be run to make sure that everything still works. In a later tutorial we'll see how to automate this process in cases where we have a lot of tests or when they take awhile to complete.
 
-## Capturing User Input
+## user_input function
 In order for our program to be useful we'll need to be able to accept user input from the terminal. We will use the built-in `input` function to do this.
 
 Let's create a function to prompt the user.
