@@ -56,7 +56,7 @@ def select(function_code):
         print("Unknown Option")
     return True
 ```
-Then inside our while loop we can set our running variable to the returned value of select thereby exiting the while loop.
+Then inside our `while` loop we can set our running variable to the returned value of our `select` function thereby exiting the while loop.
 
 ```python
 running = True
@@ -100,7 +100,7 @@ def test():
     # Your testing code goes here
 
 # Run Tests
-# test()
+test()
 
 running = True
 while running:
@@ -108,23 +108,25 @@ while running:
     running = select(selection)
 ```
 
-At this point you should have a simple working that looks like this
-![]()
-
-## One last thing
-You'll notice that if you run the R option an error shows up. This is similar to one of the other errors we've seen in this tutorial. See if you can fix the error in question.
+At this point you should have a simple working checklist that looks like this
+![](rainbow_checklist_running.gif)
 
 ## Finish things up
 The remainder of the program can be finished with the concepts you've already learned here.
-Todo:
-* Fix TypeError that occurs when running option 'R'
-* Add update and destroy options to select function
 
-Stretch Challenges:
-* Make user prompt easier to read by clearing the output between user selection.
-* Handle errors caused by user error that might pop up.
-* Add function that un-checks a checked item in the list
+Items left for you to do:
+* Add read, update and destroy options to the select function.
+* Allow for case insensitive feature selection.
+* Handle errors caused by invalid user input (invalid indexes).
+
+Was this too easy? 
+Here are some stretch challenges :
+* Make the user prompt easier to read by clearing the terminal output between user selections.
+* Add function that un-checks a checked item in the list.
+* Display colored text in terminal.
 
 
 ## Conclusion
-This tutorial covered a lot of material. This first run through python may feel overwhelming but with additional practise and exposure you'll start to gain a mastery of programming concepts that will lead to more powerful concepts down the road. You're now firmly on your way to becoming your own super hero.
+Here we've seen how to approach designing a simple application. We started by defining the features we needed with user stories. Then we took those stories and implemented the features we needed as functions that could be executed. All our functions were thoroughly tested so that we knew that all our code was in working order before shipping to the user. 
+
+We also saw that **objects** can contain both data and code that can be executed. Next we'll explore how to create our own objects and unlock the power of object oriented programming. In addition, we'll explore more testing tools that help us to write code with fewer bugs.
