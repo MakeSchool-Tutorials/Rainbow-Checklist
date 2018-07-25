@@ -20,22 +20,24 @@ Lets wrap our statements in the while loop like this:
 ```python
 running = True
 while running:
-    selection = user_input("Press C to add to list, R to Read from list and P to display list")
+    selection = user_input(
+        "Press C to add to list, R to Read from list and P to display list")
     select(selection)
 
 ```
-Here we have set a variable named running to ```True```. On every run the `while` loop will check the value of `running` and it will return back as True therby continuing the loop. This is called an **infinite loop** -- that is a loop that does not end -- and it is where Apple decided to build their headquarters.
+Here we have set a variable named running to ```True```. At the beginning of every loop the `while` loop will check the value of `running` and it will return back as True therby continuing the loop. This is called an **infinite loop** -- that is a loop that does not end -- and it is where Apple decided to build their headquarters.
 
-This code as it is will never finish running so we'll need a way to set `running` to False somewhere.
+This code will never finish running as is, so we'll need a way to set `running` to False somewhere.
 
 ## Fix the Infinite Loop
 An easy way to fix this is to add an option to our `select` function that allows for the user to quit.
 
-What we should do is have the function return a value of True for every option except for one. Let's set Q to Quit our program.
+What we should do is have the function return a value of True for every option except for one. 
 
 Here is a bit of what the updated function will look like.
 Notice when the user hits Q, they'll hit a block of code that will immediately return False.
 
+>*This is only an outline of a function you should already have written.* Don't replace your function with this code as it only serves as a guide to where you should put your own return statement.
 ```python
 def select(function_code):
    
@@ -56,17 +58,18 @@ def select(function_code):
         print("Unknown Option")
     return True
 ```
-Then inside our `while` loop we can set our running variable to the returned value of our `select` function thereby exiting the while loop.
+After you have updated your `select` function with the necessary return statements, set the variable `running` to the output of your `select` function like this.
 
 ```python
 running = True
 while running:
-    selection = user_input("Press C to add to list, R to Read from list, P to display list, and Q to quit")
+    selection = user_input(
+        "Press C to add to list, R to Read from list, P to display list, and Q to quit")
     running = select(selection)
 ```
 This will now let you continue to use the checklist until you don't need it anymore.
 
-This is what your updated file look similar to.
+Here is an overview of what checklist.py should look like. Your functions will have working code in them whereas here the code has been removed.
 ```python
 # Create our Checklist
 checklist = list()
@@ -104,7 +107,8 @@ test()
 
 running = True
 while running:
-    selection = user_input("Press C to add to list, R to Read from list, P to display list, and Q to quit")
+    selection = user_input(
+        "Press C to add to list, R to Read from list, P to display list, and Q to quit")
     running = select(selection)
 ```
 
@@ -114,13 +118,14 @@ At this point you should have a simple working checklist that looks like this
 ## Finish things up
 The remainder of the program can be finished with the concepts you've already learned here.
 
-Items left for you to do:
+**Items left for you to do:**
 * Add read, update and destroy options to the select function.
-* Allow for case insensitive feature selection.
+* Allow for the user to use upper or lowercase for function selection.
 * Handle errors caused by invalid user input (invalid indexes).
 
 Was this too easy? 
-Here are some stretch challenges :
+
+**Here are some stretch challenges** :
 * Make the user prompt easier to read by clearing the terminal output between user selections.
 * Add function that un-checks a checked item in the list.
 * Display colored text in terminal.
@@ -129,4 +134,4 @@ Here are some stretch challenges :
 ## Conclusion
 Here we've seen how to approach designing a simple application. We started by defining the features we needed with user stories. Then we took those stories and implemented the features we needed as functions that could be executed. All our functions were thoroughly tested so that we knew that all our code was in working order before shipping to the user. 
 
-We also saw that **objects** can contain both data and code that can be executed. Next we'll explore how to create our own objects to unlock the power of **object oriented programming**. In addition, we'll explore some testing tools that help us to write code with fewer bugs.
+We also saw that **objects** can contain both data and code that can be executed. Soon we'll explore how to create our own objects to unlock the power of **object oriented programming**. In addition, we'll explore some testing tools that help us to write code with fewer bugs.
