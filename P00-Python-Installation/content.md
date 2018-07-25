@@ -89,6 +89,6 @@ Sometimes you may want to run a few lines of code separately just to explore the
 
 Typing `python` in the terminal window will open the python interpreter in interactive mode. 
 
-You may find it helpful to test some of the code out in interactive mode to make sure it works before putting it in a project. 
+You may find it helpful to test some code in interactive mode and verify it works before putting it in a project. 
 
 When you want to exit interactive mode call the exit function by typing `exit()` or hit ctl-d keys on the keyboard. 
