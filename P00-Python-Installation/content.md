@@ -4,6 +4,8 @@ slug: installation
 ---
 # Captain Rainbow's Color Checklist
 
+![](the-truth-about-rainbows.jpg)
+
 The power of a single color is dwarfed in comparison by the power of many colors together. Captain Rainbow has a lot of important tasks on his plate and all of them must be done or the world will suffer. Leaving a color out of his wardrobe would only lessen his ability to vanquish the ills of the world.
 
 There is at least one way to make sure that he never leaves home without a given hue -- a satisfying checklist.
