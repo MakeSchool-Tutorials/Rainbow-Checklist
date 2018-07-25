@@ -58,7 +58,7 @@ The terminal will list all files and folders in the directory you're currently i
 $ cd checklist
 ```
 
-Now if you use the ls command you'll see that the directory is empty. Use ```touch``` to create our new file.
+Now if you use the `ls` command you'll see that the directory is empty. Use ```touch``` to create our new file.
 
 ```
 $ touch checklist.py
