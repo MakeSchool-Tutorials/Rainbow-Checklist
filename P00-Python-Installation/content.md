@@ -69,7 +69,7 @@ You should be able to verify that a new empty file was created named checklist.p
 
 There are many to choose from and each has their following. Popular choices include Atom, Sublime Text, Visual Studio Code, and for the more adventurous souls VIM. This tutorial will remain editor agnostic so choose the one that is the most comfortable for you.
 
-## A Note About The Atom Text Editor
+## A Note About The Atom Text Editor and Flake8
 If you are using Atom you may come across an error regarding the flake8 linter. A linter just goes through and verifies that your code has the proper formatting and syntax and is very helpful when it works. For some reason however Atom comes with a deprecated linter that fails to work with Python. You will want to go into the Atom menu and choose `Preferences...`.
 
 Click on `Packages` and search for flake8.
