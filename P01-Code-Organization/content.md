@@ -2,21 +2,21 @@
 title: Organizing the Project
 slug: organization
 ---
-# 01 Organizing the Code
+## Organizing the Code
 > Beautiful is better than ugly.
-> 
+>
 > Explicit is better than implicit.
-> 
+>
 > Simple is better than complex.
-> 
+>
 > Complex is better than complicated.
-> 
+>
 > --Tim Peters (The Zen of Python)
 
-When you construct a building, you don't start by digging a hole in the ground, you start by drawing up plans. The same should be true when you're writing software as well. Code can be a challenge to read unless it's well organized and properly commented. By creating a plan of action you can organize and prioritize the most important features of your project and allow for greater maintainability over the long run. 
+When you construct a building, you don't start by digging a hole in the ground, you start by drawing up plans. The same should be true when you're writing software as well. Code can be a challenge to read unless it's well organized and properly commented. By creating a plan of action you can organize and prioritize the most important features of your project and allow for greater maintainability over the long run.
 
 ## Agile Development
-How a person or an organization decides to develop a piece of software will vary wildly on who's in charge. **Agile development** is a common methodology that allows for a project to rapidly improve by constant iteration instead of the alternative **waterfall** approach that would have an entire project built to perfection before being released. Agile development is a whole topic by itself but a useful tool we can take from it is the concept of **user stories**. 
+How a person or an organization decides to develop a piece of software will vary wildly on who's in charge. **Agile development** is a common methodology that allows for a project to rapidly improve by constant iteration instead of the alternative **waterfall** approach that would have an entire project built to perfection before being released. Agile development is a whole topic by itself but a useful tool we can take from it is the concept of **user stories**.
 
 ## User Stories
 By focusing on our desired results, we're more likely to stay on track with the features that we need instead of creating features for the sake of having features. Lets try some user stories here to get a hang of how they work.
@@ -40,7 +40,7 @@ So from our user stories we can generate a list of important features and functi
 ## CRUD
 Our first user story relates to the four fundamental operations that are needed for even the simplest operability. These functions -- **create**, **read**, **update**, and **destroy** -- are generally necessary for any software to be considered complete.  
 
-These four functions are so fundamental that they're often referred to by the acronym **CRUD**. 
+These four functions are so fundamental that they're often referred to by the acronym **CRUD**.
 
 By simply making sure that our list includes these four operations we can be sure that at the very least our most basic operations can be met. Though we will need some more tools in additions to these four here.
 

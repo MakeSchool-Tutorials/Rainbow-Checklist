@@ -1,5 +1,5 @@
 ---
-title: Creating Helper Functions
+title: Writing Helper Functions
 slug: helper-functions
 ---
 ## Helper Functions
@@ -7,11 +7,13 @@ You may see a need for a few more functions to help us out with our checklist.
 
 Right now we can see a single item if we know its index, but we should be able to see the entire list.
 
-## list_all_items 
+## list__all__items
+
 ```python
 for list_item in checklist:
     #Do something
 ```
+
 In order to view the entire list at once we'll need to get every individual item in the list. We'll need to run a bit of code over and over again in order for this to work. We do this so frequently that we're given many different tools to work with. We will make use of two different types of loops in this tutorial-- the **for** loop and **while** loop.
 
 The **for** loop in python is simple and powerful at the same time. Python takes care of a number of things for us that other languages do not. The syntax that we'll use is as follows:
@@ -72,6 +74,7 @@ test()
 ```
 
 Call your new functions by adding this function call to your test function:
+
 ```python
 list_all_items()
 ```
@@ -108,18 +111,18 @@ Traceback (most recent call last):
     print(index + list_item)
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```
+
 The last line of our error tells us what is wrong.
 
 ```
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```
 
+Your error may exist on a different line than mine depending on where your `list_all_items` function exists.
 
-Your error may exist on a different line than mine depending on where your `list_all_items` function exists. 
+The fun thing about the `+` **operator** is that it does different things depending on the circumstance. Here we're trying to do something it's not prepared to do.
 
-The fun thing about the `+` **operator** is that it does different things depending on the circumstance. Here we're trying to do something it's not prepared to do. 
-
-When `+` sees two strings it will join them together so ```"a" + "b" ``` becomes ```"ab"```. But when `+` sees two integers or floats it will add them mathematically so `1 + 2` becomes 3. 
+When `+` sees two strings it will join them together so ```"a" + "b" ``` becomes ```"ab"```. But when `+` sees two integers or floats it will add them mathematically so `1 + 2` becomes 3.
 
 ```
 def list_all_items():
@@ -127,7 +130,8 @@ def list_all_items():
     for list_item in checklist:
         print(index + list_item)
         index += 1
-``` 
+```
+
 This function is our culprit.
 
 Our problem is that `+` doesn't work with different data types.
@@ -146,21 +150,23 @@ def list_all_items():
 ```
 
 This will fix our error and gives us:
+
 ```
 purple sox
 red cloak
 purple socks
 0purple socks
 ```
-This works okay but there is another cleaner way to write this. 
 
-Just as our list object had methods that we could use to work with our list, Python strings have methods within them that allow you to work with strings. 
+This works okay but there is another cleaner way to write this.
+
+Just as our list object had methods that we could use to work with our list, Python strings have methods within them that allow you to work with strings.
 
 ```python
 print("{} {}".format(index, list_item))
 ```
 
-Here we're calling the format method on a string. The format method will take care of replacing the curly braces with the variables we provide it. 
+Here we're calling the format method on a string. The format method will take care of replacing the curly braces with the variables we provide it.
 
 You may wish to replace the print statement in the above function with the updated print statement using the format method.
 
@@ -169,24 +175,29 @@ Feel free to adjust the formatting to print the way you want in the terminal.
 >As a stretch challenge try adding colors to the terminal output.
 >
 ## mark_completed
-We need a helper function that marks our items as completed. 
+We need a helper function that marks our items as completed.
 Fortunately we have all the skills needed to write this function.
 
 ```python
 def mark_completed(index):
     # Add code here that marks an item as completed
 ```
+
 Complete the function above. *Hint*: Add a character to the front of the checklist item that denotes an item as completed.
 
 All we need to do is append some text to the front of the checked item in the list. Let's use the character √ to indicate whether an item is marked as completed or not.
 
-So if Captain Rainbow needs to wear 
+So if Captain Rainbow needs to wear
 
-```Yellow Shoes```
+```
+Yellow Shoes
+```
 
 After he marks his shoes off the list he should see
 
-```√Yellow Shoes```
+```
+√Yellow Shoes
+```
 
 You can type the character by pressing option-v together.
 
@@ -198,6 +209,7 @@ Remember that you need the index of the item you want to work with.
 Can you use an existing function to update a value in the checklist with a new value?
 
 ## select
+
 ```python
 def select(function_code):
     # Create item
@@ -219,9 +231,10 @@ def select(function_code):
     # Catch all
     else:
         print("Unknown Option")
-    
+
 ```
-Let's also write a function that allows us to select which functions we want to run. 
+
+Let's also write a function that allows us to select which functions we want to run.
 
 The typical way to control which parts of your code are executed is with  `if..elif..else` statements. You'll be able to easily add additional `elif` blocks to increase the functionality of your program.
 
@@ -255,7 +268,7 @@ Let's create a function to prompt the user.
 
 ```python
 def user_input(prompt):
-    # the input function will display a message in the terminal 
+    # the input function will display a message in the terminal
     # and wait for user input.
     user_input = input(prompt)
     return user_input
@@ -271,9 +284,10 @@ print(user_value)
 ```
 
 ## Overview
-So far we've created and tested every one of the functions that we'll need though we don't really have a working program yet. 
+So far we've created and tested every one of the functions that we'll need though we don't really have a working program yet.
 
-Your checklist.py should be arranged like this:
+Your `checklist.py` file should look similiar to this:
+
 ```python
 # Create our Checklist
 checklist = list()

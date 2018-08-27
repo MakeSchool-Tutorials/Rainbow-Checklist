@@ -6,25 +6,29 @@ slug: crud
 
 Everything that we need to do will exist in the computer's memory somewhere. First we need to be able to allocate some of that memory to hold all the items in our checklist. This sounds harder than it will actually be.
 
-Try this line in interactive mode. (See **Testing Thing Out** in Section 00 to do this.) 
+Try this line in interactive mode. (See **Testing Thing Out** in Section 00 to do this.)
+
 ```python
 checklist = list()
 ```
 
 On the following line type:
+
 ```
 checklist
 ```
+
 You'll see this output appear.
+
 ```
 []
 ```
 
-Interactive mode assumes you want to view the contents of the memory space called `checklist` when you write out its name on a line by itself. 
+Interactive mode assumes you want to view the contents of the memory space called `checklist` when you write out its name on a line by itself.
 
 Anything that our list contains would show up between the brackets, but our list is empty so we only see brackets.
 
-We can implement a simple checklist using a special Python **data type** called a **list**. If you're familiar with the concept of an array, then you're already familiar with the idea of a python list. 
+We can implement a simple checklist using a special Python **data type** called a **list**. If you're familiar with the concept of an array, then you're already familiar with the idea of a python list.
 
 A list can be thought of as a series of blocks in memory that live next to each other. You can fit data into any block that already exists, add additional blocks, remove unwanted blocks, and of course edit anything in the allocated blocks. Each block is referred to by its index number which starts at 0.
 
@@ -34,32 +38,38 @@ When we want to create a new item in our checklist we'll simply add the next blo
 > A **data type** is the classification that specifies the kind of data that exists somewhere. Python is considered a **loosely typed** language which means you don't have to tell the computer the type of value it should expect to store in memory. This convenience has some drawbacks that we will encounter later.
 >
 
-## Variables 
-A variable simply points to a space in memory that is able to store something. It can hold an individual value like a number, but it can also hold what is called an **object**. Our list is not a single piece of data like a number or a word -- it's an **object**. This means it contains more than just the data we put in it. Along with the data in memory, objects supply (for *nearly* free) code that helps us manage that data. 
+## Variables
+A variable simply points to a space in memory that is able to store something. It can hold an individual value like a number, but it can also hold what is called an **object**. Our list is not a single piece of data like a number or a word -- it's an **object**. This means it contains more than just the data we put in it. Along with the data in memory, objects supply (for *nearly* free) code that helps us manage that data.
 
 ## Declaring Variables
 So the following line
+
 ```python
 checklist = list()
 ```
+
 creates a list object in memory that we can refer back to by the name `checklist`.
 
-In Python this line can also be written as 
+In Python this line can also be written as
+
 ```python
 checklist = []
 ```
+
 The first example is more explicit so that is what I'll use.
 
 As we'll see later, our list object already includes within it most of the code we'll need to work with it.
 
 ## Making our Code Reusable with Functions
-Writing each command explicitly isn't a terribly useful way to program. Ideally you will want to be able to re-use as much code as possible. This means breaking it up into small chunks that can be called on when needed. These chunks of code are called **functions** and are how we will structure most of our program. 
+Writing each command explicitly isn't a terribly useful way to program. Ideally you will want to be able to re-use as much code as possible. This means breaking it up into small chunks that can be called on when needed. These chunks of code are called **functions** and are how we will structure most of our program.
 
 A function is just a collection of code that allows for reuse and is written like this:
+
 ```python
 def my_fun_function(say_this):
     print(say_this)
 ```
+
 Functions accept any number of values as **parameters** -- or inputs-- and can optionally return a value to whatever called the function in the first place.
 
 This function when run will take a single parameter, `say_this`, as its input and print it to the console. Every line below the **function declaration** must be indented to be included within that function. You can indent with spaces or tabs but once you choose one you can't mix the two.
@@ -69,13 +79,13 @@ This function when run will take a single parameter, `say_this`, as its input an
 >`
 > def my_fun_function(say_this):
 > `
-> 
+>
 > is the function declaration.
 
 Lets run our new function.
 
-```
-my_fun_function("Hello World")
+```python
+my_fun_function('Hello World')
 ```
 
 You'll see the output will be:
@@ -84,7 +94,7 @@ You'll see the output will be:
 Hello World
 ```
 
-Lets create our first useful functions using what we learned when we ran the code above. 
+Lets create our first useful functions using what we learned when we ran the code above.
 
 ## Create, Read, Update, and Destroy
 
@@ -92,17 +102,20 @@ Now we have our checklist but we can't use it yet. There are four main functions
 
 ## Create
 Add these lines to checklist.py and run the file in the terminal as explained in section 00 above.
+
 ```python
 checklist = list()
-checklist.append("Hello")
+checklist.append('Blue')
 print(checklist)
-checklist.append("World")
+checklist.append('Orange')
 print(checklist)
 ```
+
 You should see the output in the terminal:
+
 ```
-['Hello']
-['Hello', 'World']
+['Blue']
+['Blue', 'Orange']
 ```
 
 So what's happening here?
@@ -110,18 +123,19 @@ So what's happening here?
 * Line 1 creates a new empty list object and puts it in memory.
 * Line 2 runs a chunk of code within that object and passes in the value we wish to add to our list.
 * Line 3 prints the entire list to the console.
-* Line 4 runs the same append code and passes "World" to our list.
+* Line 4 runs the same append code and passes 'World' to our list.
 * Line 5 prints the entire list again.
 
 Python displays 'Hello', 'World' in brackets to tell you the items Hello and World are in a list.
 
 So lets put this inside our new create function.
+
 ```python
 def create(item):
-    checklist.append("Hello")
+    checklist.append('Blue')
 ```
 
-This won't work the way we want because every item in our list will just be ```Hello```. 
+This won't work the way we want because every item in our list will just be ```Blue```.
 
 Can you guess what our new update will be?
 
@@ -130,7 +144,7 @@ def create(item):
     checklist.append(item)
 ```
 
-Hopefully you can see that Python interprets anything in quotes as an actual value - specifically the **string** data type. Whereas if you leave off the quotes it will look for a variable of that name (unless its a number in which case Python will treat it as such). 
+Hopefully you can see that Python interprets anything in quotes as an actual value - specifically the **string** data type. Whereas if you leave off the quotes it will look for a variable of that name (unless its a number in which case Python will treat it as such).
 
 In the second example we are referring to the variable we declared in the function declaration.
 
@@ -151,6 +165,7 @@ checklist[0]
 If `checklist` at the time you called this looked like `['Hello', 'World']`
 
 Then `checklist[0]` would return:
+
 ```
 Hello
 ```
@@ -164,29 +179,33 @@ def read(index):
     item = checklist[index]
     return item
 ```
-`item = checklist[index]` will return the value that lives at that index in our checklist and save it in a memory location we named `item`. 
+
+`item = checklist[index]` will return the value that lives at that index in our checklist and save it in a memory location we named `item`.
 The function will then return the value that resides at the memory address we called `item`.
 
 We can do a bit better though and stick it all on two lines:
+
 ```python
 def read(index):
     return checklist[index]
 ```
 
-
 ## Update
 Try running these lines in Python:
+
 ```python
 checklist = ['Hello', 'World']
-checklist[1] = "Cats"
+checklist[1] = 'Cats'
 print(checklist)
 ```
+
 You should see:
 
 ```
 ['Hello', 'Cats']
 ```
-All this is doing is overwriting the data located in the second position of our list with the word "Cats".
+
+All this is doing is overwriting the data located in the second position of our list with the string `Cats`.
 
 Let's make a function out of this. Just like our last function we'll need the index of the item we'll need to update, but we'll also need to know what we need to update it with. This function will need an additional parameter.
 
@@ -202,20 +221,24 @@ Here we'll need to access a different chunk of code -- or **method** -- inside o
 
 Enter the pop method.
 
-Calling the pop method in our list will remove the last item in the list by default. If we want a different item we must specify it. 
+Calling the pop method in our list will remove the last item in the list by default. If we want a different item we must specify it.
 
 ```python
 checklist = ['Hello', 'World']
 checklist.pop(1)
 print(checklist)
 ```
+
 This should output:
+
 ```
 ['Hello']
 ```
+
 You can see that we've removed the second element in our list.
 
 Lets turn this into a function like this:
+
 ```python
 def destroy(index):
     checklist.pop(index)
@@ -224,7 +247,8 @@ def destroy(index):
 There are many more methods that are available inside the Python list object. Check out the [python list documentation](https://docs.python.org/3/tutorial/datastructures.html) to see what other methods are available to you.
 
 ## Testing
-Our checklist.py file we wrote so far should be organized like this:
+Our `checklist.py` file we wrote so far should be organized like this:
+
 ```python
 checklist = list()
 
@@ -254,6 +278,7 @@ def test():
 Test the functions you made by calling them with different values and checking the result.
 
 Add these function calls to your new `test` function:
+
 ```
 create("purple sox")
 create("red cloak")
@@ -293,9 +318,11 @@ def test():
 
 test()
 ```
+
 (Don't paste this into your code, it's only to serve as an overview of what you should already have.)
 
 You should see the following output:
+
 ```
 purple sox
 red cloak
@@ -305,6 +332,7 @@ Traceback (most recent call last):
   File "<stdin>", line 2, in read_item
 IndexError: list index out of range
 ```
+
 We see an error because we tried to access the second item in a one item list. The last line of the error tells us this by saying the index was out of range.
 This may be something we'll have to think about if we were going to implement this in production. If this function were called with an invalid index value our program would crash and people would be sad. As a stretch challenge you can update any applicable functions that we have made with the ability to verify that all index values are accurate.
 

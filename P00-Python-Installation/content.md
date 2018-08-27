@@ -2,7 +2,7 @@
 title: Captain Rainbow's Color Checklist
 slug: installation
 ---
-# Captain Rainbow's Color Checklist
+## Captain Rainbow's Color Checklist
 
 ![](the-truth-about-rainbows.jpg)
 
@@ -19,7 +19,7 @@ By beginning his day with a simple checklist he can prepare for what the rest of
 
 This tutorial assumes that you're using a computer running any version of Mac OS X. Other operating systems may require a dramatically different setup which is beyond the scope of this tutorial.
 
-You can use the terminal to check which version of python you're using. 
+You can use the terminal to check which version of python you're using.
 * Click on the Finder icon in the Dock.
 * In the Go menu click Applications
 * Search inside the Applications folder for Terminal
@@ -89,8 +89,8 @@ Hello World
 ## Testing Things Out
 Sometimes you may want to run a few lines of code separately just to explore the language. Python includes a handy mode that allows you to run commands on the fly.
 
-Typing `python` in the terminal window will open the python interpreter in interactive mode. 
+Typing `python` in the terminal window will open the python interpreter in interactive mode.
 
-You may find it helpful to test some code in interactive mode and verify it works before putting it in a project. 
+You may find it helpful to test some code in interactive mode and verify it works before putting it in a project.
 
-When you want to exit interactive mode call the exit function by typing `exit()` or hit ctl-d keys on the keyboard. 
+When you want to exit interactive mode call the exit function by typing `exit()` or hit ctl-d keys on the keyboard.
