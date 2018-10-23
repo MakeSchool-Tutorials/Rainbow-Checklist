@@ -19,7 +19,7 @@ When you construct a building, you don't start by digging a hole in the ground, 
 How a person or an organization decides to develop a piece of software will vary wildly on who's in charge. **Agile development** is a common methodology that allows for a project to rapidly improve by constant iteration instead of the alternative **waterfall** approach that would have an entire project built to perfection before being released. Agile development is a whole topic by itself but a useful tool we can take from it is the concept of **user stories**.
 
 ## User Stories
-By focusing on our desired results, we're more likely to stay on track with the features that we need instead of creating features for the sake of having features. Lets try some user stories here to get a hang of how they work.
+By focusing on our desired results, we're more likely to stay on track with the features that we need instead of creating features for the sake of having features. Lets try some user stories here to get the hang of how they work.
 
 An easy way to write user stories is to frame them in a loose template. You have a user that desires a feature so that they can do something.
 
