@@ -12,6 +12,15 @@ There is at least one way to make sure that he never leaves home without a given
 
 By beginning his day with a simple checklist he can prepare for what the rest of the day will throw at him.
 
+We are going to write a Python program helps Captain Rainbow decide what he is going to wear. Everyday he has to decide what color each of his clothing items will be. While this is a fun task on the weekends, it can be extra chllenging during the week when he is trying to get to work on time.
+
+**Some things to consider:**
+1. There are seven colors in the rainbow, and seven items of clothing to color.
+2. He can never wear the same color on any of his items. If he is wearing a purple shoe, he cannnot wear a second purple shoe.
+3. He must wear every color of the rainbow each day.
+
+Can you help make his mornings easier by developing an algorhythm that will make it easier to pick his clothes?
+
 ## What you'll need.
 
 * A computer with Python 3 installed
@@ -20,10 +29,10 @@ By beginning his day with a simple checklist he can prepare for what the rest of
 This tutorial assumes that you're using a computer running any version of Mac OS X. Other operating systems may require a dramatically different setup which is beyond the scope of this tutorial.
 
 You can use the terminal to check which version of python you're using.
-* Click on the Finder icon in the Dock.
+* Click on the Finder icon in the Dock
 * In the Go menu click Applications
-* Search inside the Applications folder for Terminal
-* Double click Terminal to open it.
+* Search inside the Applications folder for Terminal or iTerm2
+* Double click the terminal to open it
 
 At the terminal prompt type
 ```
@@ -36,7 +45,7 @@ Some systems may have python2 and python3 installed. If you saw python version 2
 $ python3 --version
 ```
 
-This tutorial requires version 3 to run. If you had to run the second command to specify version 3 then instead of running ```python ./myfilename.py``` you'll want to run ```python3 ./myfilename.py``` to execute the python script you're going to write.
+This tutorial requires Python version 3 to run. If you had to run the second command to specify version 3 then instead of running ```python ./myfilename.py``` you'll want to run ```python3 ./myfilename.py``` to execute the python script you're going to write.
 
 ##  Getting Started
 To begin with we'll create a directory for the project to live in. Use the `mkdir` command to do this.
