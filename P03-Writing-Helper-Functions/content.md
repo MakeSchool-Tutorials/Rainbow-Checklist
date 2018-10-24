@@ -7,7 +7,7 @@ You may see a need for a few more functions to help us out with our checklist.
 
 Right now we can see a single item if we know its index, but we should be able to see the entire list.
 
-## list__all__items
+## list_all_items
 
 ```python
 for list_item in checklist:
