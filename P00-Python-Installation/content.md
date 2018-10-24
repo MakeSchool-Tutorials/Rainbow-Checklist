@@ -12,11 +12,11 @@ There is at least one way to make sure that he never leaves home without a given
 
 By beginning his day with a simple checklist he can prepare for what the rest of the day will throw at him.
 
-We are going to write a Python program helps Captain Rainbow decide what he is going to wear. Everyday he has to decide what color each of his clothing items will be. While this is a fun task on the weekends, it can be extra chllenging during the week when he is trying to get to work on time.
+We are going to write a Python program that helps Captain Rainbow decide what he is going to wear. Everyday he has to decide what color each of his clothing items will be. While this is a fun task on the weekends, it can be extra challenging during the week when he is trying to get to work on time.
 
 **Some things to consider:**
 1. There are seven colors in the rainbow, and seven items of clothing to color.
-2. He can never wear the same color on any of his items. If he is wearing a purple shoe, he cannnot wear a second purple shoe.
+2. He can never wear the same color on any of his items. If he is wearing a purple shoe, he cannot wear a second purple shoe.
 3. He must wear every color of the rainbow each day.
 
 Can you help make his mornings easier by developing an algorhythm that will make it easier to pick his clothes?
