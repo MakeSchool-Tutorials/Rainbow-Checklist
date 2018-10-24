@@ -123,10 +123,10 @@ So what's happening here?
 * Line 1 creates a new empty list object and puts it in memory.
 * Line 2 runs a chunk of code within that object and passes in the value we wish to add to our list.
 * Line 3 prints the entire list to the console.
-* Line 4 runs the same append code and passes 'World' to our list.
+* Line 4 runs the same append code and passes 'Blue' to our list.
 * Line 5 prints the entire list again.
 
-Python displays 'Hello', 'World' in brackets to tell you the items Hello and World are in a list.
+Python displays 'Blue', 'Orange' in brackets to tell you the items Blue and Orange are in a list.
 
 So lets put this inside our new create function.
 
@@ -140,6 +140,7 @@ This won't work the way we want because every item in our list will just be ```B
 Can you guess what our new update will be?
 
 ```python
+# CREATE
 def create(item):
     checklist.append(item)
 ```
@@ -148,7 +149,11 @@ Hopefully you can see that Python interprets anything in quotes as an actual val
 
 In the second example we are referring to the variable we declared in the function declaration.
 
-Just like magic you can add anything you want (within reason) to your list. Do you feel the power coursing through your fingers yet? No? Well just wait a bit then.
+Just like magic you can add anything you want (within reason) to your list. Do you feel the power coursing through your fingers yet? 
+
+No? 
+
+Well just wait a bit then.
 
 Lets create our next function -- read.
 
@@ -162,12 +167,12 @@ Indexes start at zero so to access the first block that was added, you'll use:
 checklist[0]
 ```
 
-If `checklist` at the time you called this looked like `['Hello', 'World']`
+If `checklist` at the time you called this looked like `['Blue', 'Orange']`
 
 Then `checklist[0]` would return:
 
 ```
-Hello
+Blue
 ```
 
 It may seem odd to start a list at 0, but this is pretty standard in the industry due to some very nice features that will be discussed in CS2.
@@ -175,6 +180,7 @@ It may seem odd to start a list at 0, but this is pretty standard in the industr
 So in order to retrieve a value from our list we'll need to have the index where the data lives. This should tell us that it should be a **parameter** in our new read function.
 
 ```python
+# READ
 def read(index):
     item = checklist[index]
     return item
@@ -186,6 +192,7 @@ The function will then return the value that resides at the memory address we ca
 We can do a bit better though and stick it all on two lines:
 
 ```python
+# READ
 def read(index):
     return checklist[index]
 ```
@@ -194,7 +201,7 @@ def read(index):
 Try running these lines in Python:
 
 ```python
-checklist = ['Hello', 'World']
+checklist = ['Blue', 'Orange']
 checklist[1] = 'Cats'
 print(checklist)
 ```
@@ -202,7 +209,7 @@ print(checklist)
 You should see:
 
 ```
-['Hello', 'Cats']
+['Blue', 'Cats']
 ```
 
 All this is doing is overwriting the data located in the second position of our list with the string `Cats`.
@@ -210,6 +217,7 @@ All this is doing is overwriting the data located in the second position of our 
 Let's make a function out of this. Just like our last function we'll need the index of the item we'll need to update, but we'll also need to know what we need to update it with. This function will need an additional parameter.
 
 ```python
+# UPDATE
 def update(index, item):
     checklist[index] = item
 ```
@@ -224,7 +232,7 @@ Enter the pop method.
 Calling the pop method in our list will remove the last item in the list by default. If we want a different item we must specify it.
 
 ```python
-checklist = ['Hello', 'World']
+checklist = ['Blue', 'Cats']
 checklist.pop(1)
 print(checklist)
 ```
@@ -232,7 +240,7 @@ print(checklist)
 This should output:
 
 ```
-['Hello']
+['Blue']
 ```
 
 You can see that we've removed the second element in our list.
@@ -240,6 +248,7 @@ You can see that we've removed the second element in our list.
 Lets turn this into a function like this:
 
 ```python
+# DESTROY
 def destroy(index):
     checklist.pop(index)
 ```
@@ -252,15 +261,19 @@ Our `checklist.py` file we wrote so far should be organized like this:
 ```python
 checklist = list()
 
+# CREATE
 def create(item):
     # Create item code here
 
+# READ
 def read(index):
     # Read code here
 
+# UPDATE
 def update(index, item):
     # Update code here
 
+# DESTROY
 def destroy(index):
     # Destroy code here
 
@@ -336,4 +349,4 @@ IndexError: list index out of range
 We see an error because we tried to access the second item in a one item list. The last line of the error tells us this by saying the index was out of range.
 This may be something we'll have to think about if we were going to implement this in production. If this function were called with an invalid index value our program would crash and people would be sad. As a stretch challenge you can update any applicable functions that we have made with the ability to verify that all index values are accurate.
 
-Remove the line that throws the error so we can move on.
+Remove or comment out the line that throws the error so we can move on.
